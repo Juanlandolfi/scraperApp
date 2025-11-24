@@ -2,6 +2,10 @@ import os
 import psycopg2
 from dotenv import load_dotenv
 from contextlib import contextmanager
+from psycopg2.extensions import cursor as PsycopgCursor
+from typing import Iterator
+
+
 
 
 load_dotenv()
@@ -16,7 +20,7 @@ DATABASE = os.getenv("DATABASE")
 
 # Returns cursor. Commit and close.
 @contextmanager
-def get_db():
+def get_db() -> Iterator[PsycopgCursor]:
     connection = None
     cursor = None
     try:
