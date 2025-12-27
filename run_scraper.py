@@ -3,8 +3,10 @@ from core.browser import BrowserManager
 from core.downloader import Downloader
 from extractors.factory import get_extractor
 from pipelines.supabase_pipeline import SupabasePipeline
-from jobs.product_jobs import JOBS
 from jobs.jobs_getter import load_jobs, site_mapper
+
+
+
 async def main():
 
     JOBS = load_jobs()

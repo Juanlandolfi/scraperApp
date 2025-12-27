@@ -1,3 +1,9 @@
+import re 
+
 def parse_price(price: str | None) -> float:
     if price is None: return None
-    return float(price.replace("$", "").replace(".","").replace(",",".").strip())
+    match = re.search(r"\$\s*([\d\.,]+)", price)
+    if not match:
+        return None
+    price = match.group(1)
+    return float(price.replace(".", "").replace(",", "."))

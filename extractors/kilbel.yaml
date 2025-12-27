@@ -1,0 +1,18 @@
+name: Kilbel
+fields:
+  product_name_store:
+    selector: ".titulo_producto"
+    type: text
+    parser: 
+  
+  price_actual:
+    selector:
+    type:
+  
+  price_regular:
+    selector:
+    type:
+  
+  internal_code:
+    selector:
+    type:

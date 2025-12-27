@@ -32,6 +32,5 @@ def site_mapper(site_id: str) -> str:
     sites = {
         '1': 'Kilbel'
     }
-
     return sites.get(site_id, 'Unkown')
 

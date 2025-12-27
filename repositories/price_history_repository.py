@@ -13,10 +13,11 @@ class PriceHistoryRepository(BaseRepository):
                 ,store_product_code
                 ,product_id
                 ,fired_by_watch
+                ,price_promotion
                  )
             VALUES (%s, %s, %s, 
                     %s, %s, %s, 
-                    %s, %s)
+                    %s, %s, %s)
         """
 
         params = (
@@ -27,7 +28,8 @@ class PriceHistoryRepository(BaseRepository):
             item.get("url"),
             item.get("store_product_code"),
             item.get("product_id"),
-            item.get("record")
+            item.get("record"),
+            item.get("price_promotion")
 
         )
 
